@@ -10,13 +10,26 @@
     "astro": "astro",
     "git:wip": "git add . && git commit -a -m [WIP] && git push --set-upstream origin main",
     "github:browse": "gh browse",
+    "pnpm:cache_delete": "pnpm cache delete",
     "pnpm:i": "pnpm install",
     "pnpm:outdated": "pnpm outdated",
+    "pnpm:self-update": "pnpm self-update",
     "pnpm:up": "pnpm update --latest --interactive"
   },
   "dependencies": {
-    "@astrojs/starlight": "^0.42.10",
-    "astro": "^7.4.8",
-    "sharp": "^0.35.3"
+    "@astrojs/markdown-satteri": "^0.4.10",
+    "@astrojs/starlight": "^0.43.1",
+    "@mirrordown/sat-abbr": "^0.2.0",
+    "@mirrordown/sat-del": "^0.2.0",
+    "@mirrordown/sat-github-alerts": "^0.2.0",
+    "@mirrordown/sat-ins": "^0.2.0",
+    "@mirrordown/sat-mark": "^0.2.0",
+    "@mirrordown/sat-mermaid-pele": "^0.2.0",
+    "@tailwindcss/vite": "^4.3.5",
+    "astro": "^7.4.12",
+    "katex": "^0.19.1",
+    "satteri-katex": "^0.3.0",
+    "sharp": "^0.35.3",
+    "tailwindcss": "^4.3.5"
   }
 }
