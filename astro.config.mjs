@@ -19,11 +19,18 @@ import { satteriGithubAlerts } from "@mirrordown/sat-github-alerts";
 export default defineConfig({
   fonts: [
     {
-      cssVariable: "--font-fira-code",
+      cssVariable: "--op-font-mono",
       name: "Fira Code",
       provider: fontProviders.google(),
       styles: ["normal"],
-      weights: ["300 700"],
+      weights: ["400"],
+    },
+    {
+      cssVariable: "--op-font-sans",
+      name: "Zilla Slab",
+      provider: fontProviders.google(),
+      styles: ["normal"],
+      weights: ["400"],
     },
   ],
   i18n: {
@@ -32,10 +39,15 @@ export default defineConfig({
   },
   integrations: [
     starlight({
+      components: {
+        Head: "@/components/Head.astro",
+      },
       customCss: [
-        "katex/dist/katex.min.css",
         "@mirrordown/sat-github-alerts/github-alerts.css",
         "@mirrordown/sat-mermaid-pele/mermaid-pele.css",
+        "katex/dist/katex.min.css",
+        "@/styles/global.css",
+        "@/styles/custom.css",
       ],
       defaultLocale: "en",
       sidebar,
@@ -47,7 +59,7 @@ export default defineConfig({
         },
         {
           icon: "x.com",
-          label: "X",
+          label: "X.com",
           href: "https://x.com/olivierparent77",
         },
         {
@@ -90,5 +102,6 @@ export default defineConfig({
   outDir: "./docs",
   vite: {
     plugins: [tailwindcss()],
+    resolve: { tsconfigPaths: true },
   },
 });

@@ -1,0 +1,10 @@
+---
+import Default from "@astrojs/starlight/components/Head.astro";
+import { Font } from "astro:assets";
+---
+
+<Font cssVariable="--op-font-mono" preload />
+<Font cssVariable="--op-font-sans" preload />
+<Default>
+  <slot />
+</Default>

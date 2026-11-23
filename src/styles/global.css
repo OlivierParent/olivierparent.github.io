@@ -1,5 +1,13 @@
-@import "tailwindcss";
+@layer base, starlight, theme, components, utilities;
 
-:root {
-  --__sl-font: var(--font-fira-code);
+@import '@astrojs/starlight-tailwind';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+
+@theme {
+  /* Your preferred text font. Starlight uses a system font stack by default. */
+  --font-sans: var(--op-font-sans), sans;
+  /* Your preferred code font. Starlight uses system monospace fonts by default. */
+  --font-mono: var(--op-font-mono), mono;
 }

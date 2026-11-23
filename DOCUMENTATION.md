@@ -5,8 +5,8 @@
 ```
 > pnpm create astro --template starlight/tailwind olivierparent.github.io
 > cd olivierparent.github.io
-> pnpm install katex satteri-katex
-> pnpm install @mirrordown/sat-abbr @mirrordown/sat-del @mirrordown/sat-github-alerts @mirrordown/sat-ins @mirrordown/sat-mark @mirrordown/sat-mermaid-pele
+> pnpm add katex satteri-katex
+> pnpm add @mirrordown/sat-abbr @mirrordown/sat-del @mirrordown/sat-github-alerts @mirrordown/sat-ins @mirrordown/sat-mark @mirrordown/sat-mermaid-pele
 > gh repo create olivierparent.github.io --public
 > git remote add origin https://github.com/OlivierParent/olivierparent.github.io
 > git branch -M main
