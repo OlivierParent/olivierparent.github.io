@@ -1,0 +1,47 @@
+---
+title: Afstanden
+---
+
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+
+*[Eng.]: Engels/English
+
+## Euclidische afstand
+
+De **euclidische afstand** *(Eng. Euclidean distance):*
+
+<div className="bg-gray-50 p-1 rounded-md">
+  <Tabs syncKey="dimensions">
+    <TabItem label="2D">
+      $$
+      L_{e2} = \sqrt{({b_x - a_x})^2 + ({b_y - a_y})^2}
+      $$
+    </TabItem>
+    <TabItem label="3D">
+      $$
+      L_{e3} = \sqrt{({b_x - a_x})^2 + ({b_y - a_y})^2 + ({b_z - a_z})^2}
+      $$
+    </TabItem>
+  </Tabs>
+</div>
+
+## Manhattanafstand
+
+De **manhattanafstand** *(Eng. Manhattan distance):*
+
+Is de som van de absolute waarde van het verschil tussen de componenten.
+
+<div className="bg-gray-50 p-1 rounded-md">
+  <Tabs syncKey="dimensions">
+    <TabItem label="2D">
+      $$
+      L_{m2} = \vert{a_x - b_x}\vert + \vert{a_y - b_y}\vert
+      $$
+    </TabItem>
+    <TabItem label="3D">
+      $$
+      L_{m3} = \vert{a_x - b_x}\vert + \vert{a_y - b_y}\vert + \vert{a_z - b_z}\vert
+      $$
+    </TabItem>
+  </Tabs>
+</div>

@@ -1,0 +1,11 @@
+---
+import Default from "@astrojs/starlight/components/Footer.astro";
+---
+
+<Default>
+  <slot />
+</Default>
+
+<footer class="op-footer">
+  <p>&copy; 2005-{new Date().getFullYear()} Olivier Parent.</p>
+</footer>

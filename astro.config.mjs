@@ -4,9 +4,13 @@ import starlight from "@astrojs/starlight";
 import { defineConfig, fontProviders } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 
+import starlightBlog from "starlight-blog";
+import starlightGroupPages from "starlight-group-pages";
+import starlightKbd from "starlight-kbd";
 import tailwindcss from "@tailwindcss/vite";
 import { satteriAbbr } from "@mirrordown/sat-abbr";
 import { satteriDel } from "@mirrordown/sat-del";
+import { satteriEmoji } from "satteri-emoji";
 import { satteriIns } from "@mirrordown/sat-ins";
 import { satteriKatex } from "satteri-katex";
 import { satteriMark } from "@mirrordown/sat-mark";
@@ -33,13 +37,14 @@ export default defineConfig({
       weights: ["400"],
     },
   ],
-  i18n: {
-    defaultLocale: "en",
-    locales: ["en", "nl"],
-  },
+  // i18n: {
+  //   defaultLocale: "en",
+  //   locales: ["en", "nl"],
+  // },
   integrations: [
     starlight({
       components: {
+        Footer: "@/components/Footer.astro",
         Head: "@/components/Head.astro",
       },
       customCss: [
@@ -49,7 +54,33 @@ export default defineConfig({
         "@/styles/global.css",
         "@/styles/custom.css",
       ],
-      defaultLocale: "en",
+      defaultLocale: "root", // optional
+      locales: {
+        root: {
+          label: "EN",
+          lang: "en", // lang is required for root locales
+        },
+        nl: {
+          label: "NL",
+          lang: "nl",
+        },
+      },
+      markdown: {},
+      plugins: [
+        starlightBlog({
+          title: {
+            en: "My Blog",
+            nl: "Mijn Blog",
+          },
+        }),
+        starlightGroupPages({ exclude: ["blog"] }),
+        starlightKbd({
+          types: [
+            { id: "mac", label: "macOS" },
+            { id: "windows", label: "Windows", default: true },
+          ],
+        }),
+      ],
       sidebar,
       social: [
         {
@@ -75,6 +106,9 @@ export default defineConfig({
     processor: satteri({
       hastPlugins: [satteriMermaidPele()],
       features: {
+        attributes: true,
+        definitionList: true,
+        // emoji: true,
         frontmatter: true,
         gfm: {
           footnotes: {
@@ -91,6 +125,7 @@ export default defineConfig({
       mdastPlugins: [
         satteriAbbr(),
         satteriDel(),
+        satteriEmoji({ shortcodes: ["github"] }), // https://emojibase.dev/emojis?filter=belgium&shortcodePresets=github
         satteriGithubAlerts(),
         satteriIns(),
         satteriKatex(),
@@ -100,6 +135,7 @@ export default defineConfig({
     syntaxHighlight: { type: "shiki", excludeLangs: ["mermaid"] },
   },
   outDir: "./docs",
+  site: "https://www.olivierparent.be",
   vite: {
     plugins: [tailwindcss()],
     resolve: { tsconfigPaths: true },

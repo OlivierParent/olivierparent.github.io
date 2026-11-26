@@ -2,9 +2,10 @@
 
 ## Installation
 
-```
+```ps
 > pnpm create astro --template starlight/tailwind olivierparent.github.io
 > cd olivierparent.github.io
+> pnpm add starlight-blog starlight-group-pages
 > pnpm add katex satteri-katex
 > pnpm add @mirrordown/sat-abbr @mirrordown/sat-del @mirrordown/sat-github-alerts @mirrordown/sat-ins @mirrordown/sat-mark @mirrordown/sat-mermaid-pele
 > gh repo create olivierparent.github.io --public
@@ -19,6 +20,9 @@
 - [Node.js](https://nodejs.org/en)
   - [Astro](https://astro.build/)
     - [Starlight](https://starlight.astro.build/)
+      - [Starlight Blog](https://starlight-blog-docs.vercel.app/)
+      - [Starlight Group Pages](https://starlight-group-pages.netlify.app/)
+      - [Starlight Kbd](https://starlight-kbd.netlify.app/)
     - [Sätteri](https://satteri.bruits.org/)
       - [Mirrordown](https://github.com/mirrordown/mirrordown/)
         - [`@mirrordown/sat-abbr`](https://github.com/mirrordown/mirrordown/tree/main/packages/sat-abbr)
@@ -28,6 +32,8 @@
         - [`@mirrordown/sat-mark`](https://github.com/mirrordown/mirrordown/tree/main/packages/sat-mark) 
         - [`@mirrordown/sat-mermaid-pele`](https://github.com/mirrordown/mirrordown/tree/main/packages/sat-mermaid-pele)
       - [satteri-plugins](https://ashish-codejourney.github.io/satteri-plugins/)
+        - [`satteri-emoji`](https://github.com/igor-koop/satteri-emoji)
+          - [Emojibase](https://emojibase.dev/)
         - [`satteri-katex`](https://satteri-plugins.js.org/plugins/satteri-katex/)
           - [KaTeX](https://katex.org/)
     - [Tailwind](https://tailwindcss.com/)

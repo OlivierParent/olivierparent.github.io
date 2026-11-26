@@ -1,69 +1,52 @@
 export const sidebar = [
-  // {
-  //   label: "Computer Graphics",
-  //   translations: {
-  //     nl: "Computergrafiek",
-  //   },
-  //   collapsed: true,
-  //   items: [
-  //     // Each item here is one entry in the navigation menu.
-  //     {
-  //       label: "Introduction",
-  //       slug: "computer_science",
-  //       translations: {
-  //         nl: "Introductie",
-  //       },
-  //     },
-  //     { label: "Example Guide", slug: "computer_science/example" },
-  //   ],
-  // },
   {
+    collapsed: true,
+    items: [{ autogenerate: { directory: "reference_works" } }],
+    label: "Reference Works",
+    translations: {
+      nl: "Naslagwerken",
+    },
+  },
+  {
+    collapsed: true,
+    items: [{ autogenerate: { directory: "computer_graphics" } }],
+    label: "Computer Graphics",
+    translations: {
+      nl: "Computergrafiek",
+    },
+  },
+  {
+    collapsed: true,
+    items: [{ autogenerate: { directory: "computer_science" } }],
     label: "Computer Science",
     translations: {
       nl: "Informatica",
     },
-    collapsed: true,
-    items: [
-      // Each item here is one entry in the navigation menu.
-      {
-        label: "Introduction",
-        slug: "computer_science",
-        translations: {
-          nl: "Introductie",
-        },
-      },
-      // { label: "Example Guide", slug: "computer_science/example" },
-    ],
   },
   {
-    label: "Mathematics",
     collapsed: true,
+    items: [
+      "mathematics",
+      "mathematics/00-terms",
+      {
+        collapsed: true,
+        items: [
+          { autogenerate: { directory: "mathematics/00-linear_algebra" } },
+        ],
+        label: "Linear Algebra",
+        translations: {
+          nl: "Lineaire algebra",
+        },
+      },
+      {
+        collapsed: true,
+        items: [{ autogenerate: { directory: "mathematics/99-appendix" } }],
+        label: "Appendix",
+      },
+    ],
+    label: "Mathematics",
     translations: {
       nl: "Wiskunde",
     },
-    items: [
-      {
-        label: "Introduction",
-        slug: "mathematics",
-        translations: {
-          nl: "Introductie",
-        },
-      },
-      // {
-      //   label: "Linear Algebra",
-      //   slug: "mathematics/linear_algebra",
-      //   translations: {
-      //     nl: "Lineaire algebra",
-      //   },
-      // },
-    ],
-  },
-  {
-    label: "Reference",
-    translations: {
-      nl: "Naslagwerk",
-    },
-    collapsed: true,
-    items: [{ autogenerate: { directory: "reference" } }],
   },
 ];
